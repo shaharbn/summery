@@ -1,145 +1,238 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>דברים לגוני</title>
+    <title>סיכום מדעי המחשב לגוני</title> 
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>סיכום לגוני מבוא למדעי המחשב</h1>
+    <h1>סיכום לגוני - מבוא למדעי המחשב</h1>
 
-    <a href="goni.html"><button type="button">שיטות עבודה שגונצ'י צריכה לחזק</button></a>
+    <nav>
+        <ul>
+            <li><a href="#while-loop">לולאת While</a></li>
+            <li><a href="#do-while-loop">לולאת Do-While</a></li>
+            <li><a href="#for-loop">לולאת For</a></li>
+            <li><a href="#break-continue">Break & Continue</a></li>
+            <li><a href="#math-functions">Math</a></li>
+            <li><a href="#strings">String</a></li>
+            <li><a href="#arrays-1d">מערך חד-מימדי</a></li>
+            <li><a href="#arrays-2d">מערך דו-מימדי</a></li>
+            <li><a href="#classes">מחלקות</a></li>
+            <li><a href="#constructors">בנאים</a></li>
+            <li><a href="#methods">מטודות</a></li>
+            <li><a href="#objects">יצירת אובייקט</a></li>
+        </ul>
+    </nav>
 
     <hr>
 
-    <h2>while loop</h2>
+    <h2 id="while-loop">while loop</h2>
     <h3>מיועד למצבים שאינך יודעת כמה פעמים את צריכה לעבור על משהו, זה טוב כדי לעבור על מספרים ואו לעשות משהו כמעט אין סוף פעמים כמו תפריט למשתמש שיכול לבחור דברים</h3>
-    <p>//דברים שאת רוצה לזכור לאחר או בזמן שהלולאה רצה</p>
-    <p>while(condition) {</p>
-    <p>// code block to be executed</p>
-    <p>}</p>
-    <a href="https://www.w3schools.com/java/java_while_loop.asp">קישור לקריאה במידת הצורך</a>
+    <pre><code class="language-java">//דברים שאת רוצה לזכור לאחר או בזמן שהלולאה רצה
+while(condition) {
+   // code block to be executed
+}</code></pre>
+    <a href="https://www.w3schools.com/java/java_while_loop.asp" target="_blank">קישור לקריאה במידת הצורך</a>
 
-    
     <hr>
 
-    <h2>do while loop</h2>
+    <h2 id="do-while-loop">do while loop</h2>
     <h3>מיועד למצבים שאינך יודעת כמה פעמים את צריכה לעבור על משהו אבל את יודעת שהיא חייבת לרוץ פעם אחת לפחות</h3>
-    <p>do {</p>
-    <p>// code block to be executed</p>
-    <p>}</p>
-    <p>while (condition);</p>
-    <a href="https://www.w3schools.com/java/java_while_loop_do.asp">קישור לקריאה במידת הצורך</a>
+    <pre><code class="language-java">do {
+   // code block to be executed
+}
+while (condition);</code></pre>
+    <a href="https://www.w3schools.com/java/java_while_loop_do.asp" target="_blank">קישור לקריאה במידת הצורך</a>
 
     <hr>
 
-    <h2>for loop</h2>
+    <h2 id="for-loop">for loop</h2>
     <h3>טוב למעבר על דברים שאת יודעת כמה פעמים את צריכה לעבור עליהם, למשל מערך</h3>
-    <p>for (int i = 0; condition; i++) {</p>
-    <p>// code block to be executed</p>
-    <p>}</p>
-    <a href="https://www.w3schools.com/java/java_for_loop.asp">קישור לקריאה במידת הצורך</a>
+    <pre><code class="language-java">for (int i = 0; condition; i++) {
+   // code block to be executed
+}</code></pre>
+    <a href="https://www.w3schools.com/java/java_for_loop.asp" target="_blank">קישור לקריאה במידת הצורך</a>
 
     <hr>
 
-    <h2>break and continue</h2>
-    <p>break; - משמש כדי לעצור לגמרי את ריצת הלולאה</p>
-    <p>continue - עוצר את האיטרציה הנוכחית לגמרי ועובר לאיטרציה הבאה של הלולאה</p>
-    <a href="https://www.w3schools.com/java/java_break.asp">קישור לקריאה במידת הצורך</a>
-    
+    <h2 id="break-continue">break and continue</h2>
+    <p><code>break;</code> - משמש כדי לעצור לגמרי את ריצת הלולאה</p>
+    <p><code>continue;</code> - עוצר את האיטרציה הנוכחית לגמרי ועובר לאיטרציה הבאה של הלולאה</p>
+    <a href="https://www.w3schools.com/java/java_break.asp" target="_blank">קישור לקריאה במידת הצורך</a>
+
     <hr>
 
-    <h2>Math</h2>
+    <h2 id="math-functions">Math</h2>
     <h3>פונקציות מתמטיות שימושיות</h3>
-    <p>Math.max(x,y) - מקסימום בין 2 מספרים</p>
-    <p>Math.min(x,y) - מינימום בין 2 מספרים</p>
-    <p>Math.abs(x) - ערך מוחלט זה מקבל מספר יחיד כלומר ניתן גם לשים ביטוי חשבוני</p>
-    <a href="https://www.w3schools.com/java/java_math.asp">קישור לקריאה במידת הצורך</a>
+    <p><code>Math.max(x,y)</code> - מקסימום בין 2 מספרים</p>
+    <p><code>Math.min(x,y)</code> - מינימום בין 2 מספרים</p>
+    <p><code>Math.abs(x)</code> - ערך מוחלט זה מקבל מספר יחיד כלומר ניתן גם לשים ביטוי חשבוני</p>
+    <a href="https://www.w3schools.com/java/java_math.asp" target="_blank">קישור לקריאה במידת הצורך</a>
 
     <hr>
 
-    <h2>String</h2>
+    <h2 id="strings">String</h2>
     <h3>לא לשכוח שמחרוזת בסוף זה מערך של אותיות ומדובר בספרייה ולכן על מחרוזת היא אובייקט שיש עליו מטודות</h3>
-    <p>String txt = "ABC";</p>
-    <p>String txt = new String("ABC");</p>
-    <p>txt.toUpperCase() - עושה את כל האותיות גדולות לזכור שזה לא משנה את המשתנה המקורי</p>
-    <p>txt.toLowerCase() - עושה את כל האותיות קטנות לזכור שזה לא משנה את המשתנה המקורי</p>
-    <p>txt.indexOf("locate") - מוצא את האינדקס שהמילה הזאתי מתחילה במחרוזת</p>
-    <p>txt.length() - מחזיר את אורך הטקסט</p>
-    <img src="https://codepumpkin.com/wp-content/uploads/2018/01/StringPool.jpg.webp" height="400" width="500">
+    <pre><code class="language-java">String txt1 = "ABC"; // יצירה מילולית (Literal) - לרוב עדיף
+String txt2 = new String("ABC"); // יצירה עם אופרטור new
+
+txt1.toUpperCase(); // עושה את כל האותיות גדולות (מחזיר מחרוזת חדשה)
+txt1.toLowerCase(); // עושה את כל האותיות קטנות (מחזיר מחרוזת חדשה)
+int index = txt1.indexOf("B"); // מוצא את האינדקס של התו 'B' (יהיה 1)
+int length = txt1.length(); // מחזיר את אורך הטקסט (יהיה 3)</code></pre>
+    <img src="https://codepumpkin.com/wp-content/uploads/2018/01/StringPool.jpg.webp" alt="String Pool Diagram" height="300"> {/* שיניתי גובה והוספתי alt */}
     <br>
-    <a href="https://www.w3schools.com/java/java_strings.asp">קישור לקריאה במידת הצורך</a>
+    <a href="https://www.w3schools.com/java/java_strings.asp" target="_blank">קישור לקריאה במידת הצורך</a>
 
     <hr>
 
-    <h2>מערך חד מימידי</h2>
+    <h2 id="arrays-1d">מערך חד מימדי</h2>
     <h3>מערך זה בעצם איגוד של נתונים זהים כמו מספרים שלמים אחד ליד השני פיזית בזיכרון</h3>
     <h4>לרוב המעבר על מערך כזה הינו בעזרת לולאת פור יחידה</h4>
-    <p>int []arr = new int[3] - הכרזתי על מערך ריק של מספרים שלמים בגודל שלוש תאים, הגודל בזמן הריצה אינו ניתן לשינוי</p>
-    <p>int []arr = {10, 20, 30} - הכרזתי פה על מערך בגודל 3 תאים שכבר מכיל לי נתונים</p>
-    <p>arr[0] - ככה אני פונה לתא במקום הראשון וכן אלעה</p>
-    <p>arr.length - גודל המערך</p>
-    <p>הערה חשובה כן ניתן לקבוע את הגודל של המערך בזמן ריצה אבל לא יהיה ניתן לשנות אותו</p>
-    <img src="https://scaler.com/topics/images/1-array-length-example.webp" height="400" width="500">
+    <pre><code class="language-java">// הכרזה על מערך ריק של מספרים שלמים בגודל 3 תאים
+// הגודל בזמן הריצה אינו ניתן לשינוי
+int[] arr1 = new int[3];
+
+// הכרזה על מערך בגודל 3 תאים שכבר מכיל נתונים
+int[] arr2 = {10, 20, 30};
+
+// פנייה לתא במקום הראשון (אינדקס 0)
+arr2[0] = 15; // שינינו את הערך ל-15
+
+// קבלת גודל המערך
+int size = arr2.length; // size יהיה 3</code></pre>
+    <p>הערה חשובה: כן ניתן לקבוע את הגודל של המערך בזמן ריצה (למשל, על ידי קלט מהמשתמש), אבל מרגע שנקבע, לא ניתן לשנות אותו.</p>
+    <img src="https://scaler.com/topics/images/1-array-length-example.webp" alt="Array Example" height="300"> {/* שיניתי גובה והוספתי alt */}
     <br>
-    <a href="https://www.w3schools.com/java/java_arrays.asp">קישור לקריאה במידת הצורך</a>
+    <a href="https://www.w3schools.com/java/java_arrays.asp" target="_blank">קישור לקריאה במידת הצורך</a>
 
     <hr>
 
-    <h2>מערך דו מימידי</h2>
-    <h3>זה בעצם מערך חד מימדי שכל תא שלו מכיל מערך חד מימידי</h3>
-    <h4>לרוב מעבר על מערך זה בעזרת לולאת פור מקוננת</h4>
-    <p>int []arr = new int[מסםר שורות][מספר עמודות] - אני מכריז על מערך דו מימדי וגם פה הגודל קבוע</p>
-    <p>arr[איזה שורה][איזה עמודה] - איך אני פונה לתא מסויים</p>
-    <p>int[][] arr = { {1, 2, 3, 4}, {5, 6, 7} }; - ככה אני עושה מערך דו מימדי שיש בתוכו כבר איברים ולא ניתן לשנות את גודל המערך</p>
-    <p>arr.length - גודל המערך</p>
-    <p>arr.length[0] - גודל המערך של התא הראשון</p>
-    <p>הערה חשובה גם פה ניתן לקבוע את הגודל בזמן ריצה אבל אחרי שקובעים אותו לא ניתן לשנות וכן גם כל מערך בתוך תא יכול להיות בגודל שונה אחד מהשני</p>
-    <img src="https://math.hws.edu/eck/cs124/javanotes8/c7/two-dimensional-array.png">
+    <h2 id="arrays-2d">מערך דו מימדי</h2>
+    <h3>זה בעצם מערך חד מימדי שכל תא שלו מכיל מערך חד מימידי (מערך של מערכים)</h3>
+    <h4>לרוב מעבר על מערך זה בעזרת לולאת פור מקוננת (nested for loop)</h4>
+    <pre><code class="language-java">// הכרזה על מערך דו מימדי ריק (3 שורות, 4 עמודות)
+int[][] arr1 = new int[3][4];
+
+// הכרזה על מערך דו מימדי עם איברים (מערך משונן - Ragged Array)
+int[][] arr2 = { {1, 2, 3, 4}, {5, 6, 7} };
+
+// פנייה לתא בשורה השנייה (אינדקס 1), עמודה שלישית (אינדקס 2)
+int value = arr2[1][2]; // value יהיה 7
+
+// קבלת מספר השורות
+int rows = arr2.length; // rows יהיה 2
+
+// קבלת מספר העמודות בשורה הראשונה (אינדקס 0)
+int colsInRow0 = arr2[0].length; // colsInRow0 יהיה 4</code></pre>
+    <p>הערה חשובה: גם פה ניתן לקבוע את הגודל בזמן ריצה, אבל אחרי שקובעים אותו לא ניתן לשנות. כל שורה יכולה להיות בגודל שונה (מערך משונן).</p>
+    <img src="https://math.hws.edu/eck/cs124/javanotes8/c7/two-dimensional-array.png" alt="2D Array Example"> {/* הוספתי alt */}
     <br>
-    <a href="https://www.w3schools.com/java/java_arrays_multi.asp">קישור לקריאה במידת הצורך</a>
+    <a href="https://www.w3schools.com/java/java_arrays_multi.asp" target="_blank">קישור לקריאה במידת הצורך</a>
 
     <hr>
 
-    <h2>מחלקות</h2>
-    <p>מחלקות זה בעצם "מפעל" של אובייקטים</p>
-    <p>נותנים תכונות כלליות כמו שם, גיל, גובה</p>
-    <P>ועל התכונות האלה ניתן לעשות פעולות כמו לשנות את השם, להדפיס את האובייקט שנוצר וכו</P>
-    <p>publis class Person {</p>
-    <p>private String name;</p>
-    <p>private int age;</p>
-    <p>}</p>
+    <h2 id="classes">מחלקות (Classes)</h2>
+    <p>מחלקות הן כמו "תבניות" או "שרטוטים" ליצירת אובייקטים. הן מגדירות את התכונות (משתנים) וההתנהגויות (מתודות/פונקציות) שיהיו לכל האובייקטים שנוצרים מהן.</p>
+    <p>הן מאפשרות לנו לארגן את הקוד בצורה מודולרית וליצור סוגי נתונים מותאמים אישית.</p>
+    <pre><code class="language-java">public class Person {
+    // תכונות (שדות - fields / instance variables)
+    private String name;
+    private int age;
+
+    // כאן יבואו הבנאים והמתודות...
+}</code></pre>
+    <p>השתמשנו ב-<code>private</code> כדי להסתיר את הנתונים הפנימיים (Encapsulation), ונגדיר דרכים לגשת אליהם ולשנות אותם (באמצעות מתודות).</p>
 
     <hr>
 
-    <h2>בנאים</h2>
-    <h3>התפקיד של בנאי הוא לאתחל בעצם נתונים לאובייקט בזיכרון</h3>
-    <p>לא לשכוח שאנחנו מקבלים בנאי חינם שמאתחל לערכים דיפולטיביים אבל אם כותבים בנאי הוא נעלם</p>
-    <p>public Person(String name, int age){</p>
-    <p>this.name = name;</p>
-    <p>this.age = age;</p>
-    <p>}</p>
+    <h2 id="constructors">בנאים (Constructors)</h2>
+    <h3>התפקיד של בנאי הוא לאתחל אובייקט חדש שנוצר מהמחלקה. הוא רץ אוטומטית כאשר יוצרים אובייקט עם המילה <code>new</code>.</h3>
+    <p>שם הבנאי חייב להיות זהה לשם המחלקה, ואין לו סוג החזרה (אפילו לא <code>void</code>).</p>
+    <p>אם לא כותבים אף בנאי, מקבלים "בנאי ברירת מחדל" (default constructor) שלא מקבל פרמטרים ומאתחל את השדות לערכי ברירת המחדל שלהם (0 למספרים, null לאובייקטים, false לבוליאניים).</p>
+    <p>אם כותבים בנאי אחד או יותר, בנאי ברירת המחדל נעלם.</p>
+    <pre><code class="language-java">public class Person {
+    private String name;
+    private int age;
+
+    // בנאי שמקבל שם וגיל
+    public Person(String name, int age) {
+        this.name = name; // 'this' מבדיל בין הפרמטר name לשדה name
+        this.age = age;
+    }
+
+    // אפשר להוסיף בנאים נוספים (Overloading)
+    public Person(String name) {
+        this(name, 0); // קורא לבנאי השני עם גיל ברירת מחדל 0
+    }
+
+    // ... שאר המתודות
+}</code></pre>
 
     <hr>
 
-    <h2>מטודות</h2>
-    <h3>זה בעצם פעולות שכל אובייקט יכול לבצע</h3>
-    <p>נעשה מטודה למשל שמחזירה את השם של האדם</p>
-    <p>static String getName(){</p>
-    <p>return name;</p>
-    <p>}</p>
-    <h3>הערה חשובה יש מטודות שניתן לדרוס כמו להדפיס אובייקט שאם תנסי להדפיס אובייקט הוא פשוט יביא לך את הזיכרון שלו בהיפ ופעולות השוואה בין אובייקטים</h3>
+    <h2 id="methods">מטודות (Methods)</h2>
+    <h3>מתודות הן הפעולות שאובייקט יכול לבצע. הן מגדירות את ההתנהגות של האובייקטים שנוצרו מהמחלקה.</h3>
+    <p>מתודות יכולות לקבל פרמטרים, לבצע חישובים, לשנות את מצב האובייקט (ערכי השדות שלו) ולהחזיר ערך.</p>
+    <pre><code class="language-java">public class Person {
+    private String name;
+    private int age;
+
+    // Constructor...
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // מתודה שמחזירה את השם (Getter)
+    public String getName() {
+        return this.name;
+    }
+
+    // מתודה שקובעת גיל חדש (Setter)
+    public void setAge(int newAge) {
+        if (newAge >= 0) { // בדיקת תקינות קלט
+            this.age = newAge;
+        }
+    }
+
+    // מתודה שמדפיסה את פרטי האדם
+    public void introduce() {
+        System.out.println("Hello, my name is " + this.name + " and I am " + this.age + " years old.");
+    }
+
+    // מתודה שמחזירה האם האדם בוגר
+    public boolean isAdult() {
+        return this.age >= 18;
+    }
+}</code></pre>
+    <h3>הערה חשובה: יש מתודות שניתן "לדרוס" (Override) ממחלקת האב (<code>Object</code>), כמו <code>toString()</code> (להדפסת ייצוג מחרוזתי של האובייקט במקום כתובת הזיכרון שלו) ו-<code>equals()</code> (להשוואת תוכן האובייקטים במקום השוואת כתובות הזיכרון).</h3>
 
     <hr>
 
-    <h2>יצירת אובייקט</h2>
-    <h3>אובייקט זה בעצם מופע של המחלקה שהוא יוצר מצביע להיפ במחסנית ששם הוא יושב עם נתונים ממשיים</h3>
-    <p>public static void main(String[] args) {</p>
-    <p>Person person1 = new Person("Goni the princess" ,26);</p>
-    <p>System.out.println(person1.getName());</p>
-    <p>}</p>
+    <h2 id="objects">יצירת אובייקט (Object Creation)</h2>
+    <h3>אובייקט הוא "מופע" (instance) של מחלקה. הוא ישות קונקרטית שנוצרת לפי התבנית שהוגדרה במחלקה, ויש לו זיכרון משלו (בדרך כלל ב-Heap) שבו נשמרים ערכי התכונות (השדות) שלו.</h3>
+    <p>יצירת אובייקט נעשית באמצעות המילה השמורה <code>new</code> ואחריה קריאה לאחד הבנאים של המחלקה.</p>
+    <pre><code class="language-java">public class Main {
+    public static void main(String[] args) {
+        // יצירת אובייקט מסוג Person באמצעות הבנאי
+        Person person1 = new Person("Goni the Princess", 26);
+        Person person2 = new Person("Another Person"); // שימוש בבנאי השני
 
+        // קריאה למתודות על האובייקטים
+        System.out.println("Person 1's name: " + person1.getName()); // יפנה למתודה getName
+        person2.setAge(30); // יפנה למתודה setAge
 
+        person1.introduce(); // קריאה למתודה introduce
+        person2.introduce();
+
+        if (person1.isAdult()) {
+            System.out.println(person1.getName() + " is an adult.");
+        }
+    }
+}</code></pre>
 
 </body>
 </html>
