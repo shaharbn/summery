@@ -1,0 +1,150 @@
+/* עיצוב כללי לדף */
+body {
+    font-family: Arial, sans-serif; /* שינוי גופן */
+    line-height: 1.6; /* ריווח בין שורות */
+    margin: 0; /* איפוס שוליים חיצוניים של הגוף */
+    padding: 0 20px 20px 20px; /* ריווח פנימי (למעלה 0, צדדים ותחתון 20) */
+    direction: rtl; /* כיוון טקסט מימין לשמאל */
+    background-color: #f8f9fa; /* צבע רקע בהיר מאוד */
+}
+
+/* עיצוב הכותרת הראשית */
+h1 {
+    color: #343a40; /* צבע כהה */
+    text-align: center; /* ממורכז */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* עיצוב סרגל הניווט */
+nav {
+    background-color: #495057; /* רקע אפור-כחול כהה לסרגל */
+    padding: 10px 0; /* ריווח פנימי */
+    margin-bottom: 30px; /* מרווח גדול יותר מתחת לסרגל */
+    border-radius: 5px; /* פינות מעוגלות קלות */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* הצללה קלה */
+}
+
+nav ul {
+    list-style: none; /* הסרת נקודות ברירת המחדל של הרשימה */
+    padding: 0;
+    margin: 0;
+    text-align: center; /* ממורכז */
+}
+
+nav ul li {
+    display: inline-block; /* הצגת פריטי הרשימה בשורה (אפשר גם inline) */
+    margin: 0 12px; /* מרווח בין הפריטים */
+}
+
+nav ul li a {
+    color: white; /* צבע טקסט לבן */
+    text-decoration: none; /* הסרת קו תחתון מקישורים */
+    font-weight: bold;
+    padding: 5px 10px; /* ריווח פנימי לקישור עצמו */
+    border-radius: 4px;
+    transition: background-color 0.3s ease; /* אנימציה חלקה לשינוי רקע */
+}
+
+nav ul li a:hover, nav ul li a:focus {
+    background-color: #6c757d; /* שינוי רקע במעבר עכבר או פוקוס */
+    outline: none; /* הסרת קו מתאר בפוקוס */
+}
+
+/* עיצוב כללי לכותרות הנושאים */
+h2 {
+    color: #0056b3; /* צבע כחול לכותרות */
+    border-bottom: 2px solid #dee2e6; /* קו תחתון עדין לכותרת */
+    padding-bottom: 8px; /* ריווח מתחת לקו */
+    margin-top: 40px; /* מרווח גדול מעל הכותרת */
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: #5a6268; /* צבע אפור כהה לכותרות משנה */
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+/* עיצוב פסקאות */
+p {
+    color: #495057; /* צבע טקסט אפרפר */
+    margin-bottom: 10px;
+}
+
+/* עיצוב קוד בתוך פסקאות (inline code) */
+p code {
+    background-color: #e9ecef;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-family: Consolas, "Courier New", monospace;
+    direction: ltr; /* כיווניות לקוד inline */
+    unicode-bidi: embed; /* עוזר לדפדפן עם ערבוב כיווניות */
+}
+
+
+/* הוספת ריווח מעל/מתחת קווים מפרידים */
+hr {
+   margin-top: 35px;
+   margin-bottom: 35px;
+   border: 0;
+   border-top: 1px solid #dee2e6;
+}
+
+/* סידור תמונות */
+img {
+    display: block; /* הצגת תמונה כבלוק כדי לאפשר margin auto */
+    margin: 20px auto; /* ריווח מעל/מתחת ומירכוז */
+    max-width: 90%; /* הגבלת רוחב מקסימלי */
+    height: auto; /* שמירה על יחס גובה-רוחב */
+    border: 1px solid #ccc; /* מסגרת קלה */
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* עיצוב כפתורים וקישורים חיצוניים */
+a[href$=".asp"], a[href^="http"] { /* עיצוב לקישורי w3schools וקישורים חיצוניים */
+    display: inline-block;
+    background-color: #28a745; /* רקע ירוק */
+    color: white !important; /* חשוב כדי לדרוס צבעי קישור אחרים */
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px; /* פינות מעוגלות */
+    text-decoration: none !important; /* חשוב להסרת קו תחתון */
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease;
+}
+
+a[href$=".asp"]:hover, a[href^="http"]:hover {
+     background-color: #218838; /* צבע כהה יותר במעבר עכבר */
+}
+
+/* עיצוב בלוקי קוד */
+pre {
+    background-color: #e9ecef; /* רקע אפרפר בהיר לבלוק הקוד */
+    border: 1px solid #ced4da; /* מסגרת אפורה */
+    border-radius: 5px; /* פינות מעוגלות */
+    padding: 15px; /* ריווח פנימי */
+    overflow-x: auto; /* הוספת פס גלילה אופקי אם הקוד ארוך מדי */
+    direction: ltr !important; /* !!! חשוב: הגדרת כיווניות משמאל לימין */
+    text-align: left !important; /* !!! חשוב: יישור טקסט לשמאל */
+    margin-top: 15px;
+    margin-bottom: 15px;
+    white-space: pre-wrap;  /* אפשר לגלוש שורות ארוכות אם צריך */
+    word-wrap: break-word; /* שבירת מילים ארוכות */
+}
+
+pre code {
+    font-family: Consolas, "Courier New", monospace; /* גופן ברוחב קבוע */
+    font-size: 0.95em;
+    color: #212529; /* צבע טקסט כהה לקוד */
+    background-color: transparent !important; /* רקע שקוף */
+    padding: 0 !important;
+    border: none !important;
+    white-space: pre-wrap;  /* מאפשר גלישת שורות בתוך ה-code */
+    word-wrap: break-word;
+    direction: ltr !important; /* כיווניות גם כאן ליתר ביטחון */
+    text-align: left !important; /* יישור גם כאן */
+}
