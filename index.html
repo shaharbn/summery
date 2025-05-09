@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>סיכום מדעי המחשב לגוני</title> 
+    <title>סיכום מדעי המחשב לגוני</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -23,6 +23,8 @@
             <li><a href="#constructors">בנאים</a></li>
             <li><a href="#methods">מטודות</a></li>
             <li><a href="#objects">יצירת אובייקט</a></li>
+            <li><a href="#inheritance">ירושה (Inheritance)</a></li>
+            <li><a href="#polymorphism">פולימורפיזם (Polymorphism)</a></li>
         </ul>
     </nav>
 
@@ -138,11 +140,11 @@ int colsInRow0 = arr2[0].length; // colsInRow0 יהיה 4</code></pre>
     <p>מחלקות הן כמו "תבניות" או "שרטוטים" ליצירת אובייקטים. הן מגדירות את התכונות (משתנים) וההתנהגויות (מתודות/פונקציות) שיהיו לכל האובייקטים שנוצרים מהן.</p>
     <p>הן מאפשרות לנו לארגן את הקוד בצורה מודולרית וליצור סוגי נתונים מותאמים אישית.</p>
     <pre><code class="language-java">public class Person {
-    // תכונות (שדות - fields / instance variables)
-    private String name;
-    private int age;
+   // תכונות (שדות - fields / instance variables)
+   private String name;
+   private int age;
 
-    // כאן יבואו הבנאים והמתודות...
+   // כאן יבואו הבנאים והמתודות...
 }</code></pre>
     <p>השתמשנו ב-<code>private</code> כדי להסתיר את הנתונים הפנימיים (Encapsulation), ונגדיר דרכים לגשת אליהם ולשנות אותם (באמצעות מתודות).</p>
 
@@ -154,21 +156,21 @@ int colsInRow0 = arr2[0].length; // colsInRow0 יהיה 4</code></pre>
     <p>אם לא כותבים אף בנאי, מקבלים "בנאי ברירת מחדל" (default constructor) שלא מקבל פרמטרים ומאתחל את השדות לערכי ברירת המחדל שלהם (0 למספרים, null לאובייקטים, false לבוליאניים).</p>
     <p>אם כותבים בנאי אחד או יותר, בנאי ברירת המחדל נעלם.</p>
     <pre><code class="language-java">public class Person {
-    private String name;
-    private int age;
+   private String name;
+   private int age;
 
-    // בנאי שמקבל שם וגיל
-    public Person(String name, int age) {
-        this.name = name; // 'this' מבדיל בין הפרמטר name לשדה name
-        this.age = age;
-    }
+   // בנאי שמקבל שם וגיל
+   public Person(String name, int age) {
+       this.name = name; // 'this' מבדיל בין הפרמטר name לשדה name
+       this.age = age;
+   }
 
-    // אפשר להוסיף בנאים נוספים (Overloading)
-    public Person(String name) {
-        this(name, 0); // קורא לבנאי השני עם גיל ברירת מחדל 0
-    }
+   // אפשר להוסיף בנאים נוספים (Overloading)
+   public Person(String name) {
+       this(name, 0); // קורא לבנאי השני עם גיל ברירת מחדל 0
+   }
 
-    // ... שאר המתודות
+   // ... שאר המתודות
 }</code></pre>
 
     <hr>
@@ -177,36 +179,36 @@ int colsInRow0 = arr2[0].length; // colsInRow0 יהיה 4</code></pre>
     <h3>מתודות הן הפעולות שאובייקט יכול לבצע. הן מגדירות את ההתנהגות של האובייקטים שנוצרו מהמחלקה.</h3>
     <p>מתודות יכולות לקבל פרמטרים, לבצע חישובים, לשנות את מצב האובייקט (ערכי השדות שלו) ולהחזיר ערך.</p>
     <pre><code class="language-java">public class Person {
-    private String name;
-    private int age;
+   private String name;
+   private int age;
 
-    // Constructor...
-    public Person(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
+   // Constructor...
+   public Person(String name, int age) {
+       this.name = name;
+       this.age = age;
+   }
 
-    // מתודה שמחזירה את השם (Getter)
-    public String getName() {
-        return this.name;
-    }
+   // מתודה שמחזירה את השם (Getter)
+   public String getName() {
+       return this.name;
+   }
 
-    // מתודה שקובעת גיל חדש (Setter)
-    public void setAge(int newAge) {
-        if (newAge >= 0) { // בדיקת תקינות קלט
-            this.age = newAge;
-        }
-    }
+   // מתודה שקובעת גיל חדש (Setter)
+   public void setAge(int newAge) {
+       if (newAge >= 0) { // בדיקת תקינות קלט
+           this.age = newAge;
+       }
+   }
 
-    // מתודה שמדפיסה את פרטי האדם
-    public void introduce() {
-        System.out.println("Hello, my name is " + this.name + " and I am " + this.age + " years old.");
-    }
+   // מתודה שמדפיסה את פרטי האדם
+   public void introduce() {
+       System.out.println("Hello, my name is " + this.name + " and I am " + this.age + " years old.");
+   }
 
-    // מתודה שמחזירה האם האדם בוגר
-    public boolean isAdult() {
-        return this.age >= 18;
-    }
+   // מתודה שמחזירה האם האדם בוגר
+   public boolean isAdult() {
+       return this.age >= 18;
+   }
 }</code></pre>
     <h3>הערה חשובה: יש מתודות שניתן "לדרוס" (Override) ממחלקת האב (<code>Object</code>), כמו <code>toString()</code> (להדפסת ייצוג מחרוזתי של האובייקט במקום כתובת הזיכרון שלו) ו-<code>equals()</code> (להשוואת תוכן האובייקטים במקום השוואת כתובות הזיכרון).</h3>
 
@@ -216,23 +218,169 @@ int colsInRow0 = arr2[0].length; // colsInRow0 יהיה 4</code></pre>
     <h3>אובייקט הוא "מופע" (instance) של מחלקה. הוא ישות קונקרטית שנוצרת לפי התבנית שהוגדרה במחלקה, ויש לו זיכרון משלו (בדרך כלל ב-Heap) שבו נשמרים ערכי התכונות (השדות) שלו.</h3>
     <p>יצירת אובייקט נעשית באמצעות המילה השמורה <code>new</code> ואחריה קריאה לאחד הבנאים של המחלקה.</p>
     <pre><code class="language-java">public class Main {
+   public static void main(String[] args) {
+       // יצירת אובייקט מסוג Person באמצעות הבנאי
+       Person person1 = new Person("Goni the Princess", 26);
+       Person person2 = new Person("Another Person"); // שימוש בבנאי השני
+
+       // קריאה למתודות על האובייקטים
+       System.out.println("Person 1's name: " + person1.getName()); // יפנה למתודה getName
+       person2.setAge(30); // יפנה למתודה setAge
+
+       person1.introduce(); // קריאה למתודה introduce
+       person2.introduce();
+
+       if (person1.isAdult()) {
+           System.out.println(person1.getName() + " is an adult.");
+       }
+   }
+}</code></pre>
+
+    <hr>
+
+    <h2 id="inheritance">ירושה (Inheritance)</h2>
+    <h3>ירושה היא מנגנון המאפשר למחלקה אחת (מחלקת בן/תת-מחלקה) לרשת תכונות והתנהגויות (שדות ומתודות) ממחלקה אחרת (מחלקת אב/מחלקה עליונה). זה מאפשר שימוש חוזר בקוד ומבנה היררכי של מחלקות.</h3>
+    <p>הקשר בין מחלקת בן למחלקת אב הוא קשר של "is-a" (הוא סוג של). למשל, "סטודנט הוא סוג של אדם".</p>
+    <p>ב-Java, ירושה מוצהרת באמצעות המילה השמורה <code>extends</code>.</p>
+    <p>מחלקת הבן מקבלת את כל השדות והמתודות הציבוריים (<code>public</code>) והמוגנים (<code>protected</code>) של מחלקת האב. שדות ומתודות פרטיים (<code>private</code>) אינם עוברים בירושה ישירה (אך ניתן לגשת אליהם דרך מתודות public/protected של האב).</p>
+    <p>ניתן "לדרוס" (override) מתודות של מחלקת האב במחלקת הבן כדי לספק התנהגות ספציפית יותר. נהוג להשתמש באנוטציה <code>@Override</code> כדי לציין דריסה.</p>
+    <p>כשיוצרים אובייקט של מחלקת הבן, הבנאי של מחלקת האב נקרא ראשון. אם לא מציינים במפורש, נקרא בנאי ברירת המחדל של האב. ניתן לקרוא לבנאי ספציפי של האב באמצעות המילה <code>super()</code> בשורה הראשונה של בנאי הבן.</p>
+
+    <pre><code class="language-java">// מחלקת אב (Superclass)
+class Animal {
+    private String name;
+
+    public Animal(String name) {
+        this.name = name;
+    }
+
+    public void makeSound() {
+        System.out.println("Some generic animal sound");
+    }
+
+    public String getName() {
+        return name;
+    }
+}
+
+// מחלקת בן (Subclass) היורשת מ-Animal
+class Dog extends Animal {
+    private String breed;
+
+    public Dog(String name, String breed) {
+        super(name); // קריאה לבנאי של מחלקת האב (Animal)
+        this.breed = breed;
+    }
+
+    // דריסה של מתודת makeSound
+    @Override
+    public void makeSound() {
+        System.out.println("Woof woof!");
+    }
+
+    // מתודה ספציפית לכלב
+    public void fetch() {
+        System.out.println(getName() + " is fetching the ball.");
+    }
+
+    public String getBreed() {
+        return breed;
+    }
+}
+
+// מחלקה נוספת היורשת מ-Animal
+class Cat extends Animal {
+    public Cat(String name) {
+        super(name);
+    }
+
+    @Override
+    public void makeSound() {
+        System.out.println("Meow!");
+    }
+}
+
+public class InheritanceDemo {
     public static void main(String[] args) {
-        // יצירת אובייקט מסוג Person באמצעות הבנאי
-        Person person1 = new Person("Goni the Princess", 26);
-        Person person2 = new Person("Another Person"); // שימוש בבנאי השני
+        Dog myDog = new Dog("Buddy", "Golden Retriever");
+        Cat myCat = new Cat("Whiskers");
 
-        // קריאה למתודות על האובייקטים
-        System.out.println("Person 1's name: " + person1.getName()); // יפנה למתודה getName
-        person2.setAge(30); // יפנה למתודה setAge
+        System.out.println(myDog.getName() + " is a " + myDog.getBreed());
+        myDog.makeSound(); // יקרא למתודה הדרוסה של Dog
+        myDog.fetch();
 
-        person1.introduce(); // קריאה למתודה introduce
-        person2.introduce();
+        System.out.println(myCat.getName() + " is a cat.");
+        myCat.makeSound(); // יקרא למתודה הדרוסה של Cat
 
-        if (person1.isAdult()) {
-            System.out.println(person1.getName() + " is an adult.");
+        // Animal genericAnimal = new Animal("Generic");
+        // genericAnimal.makeSound(); // יקרא למתודה של Animal
+    }
+}</code></pre>
+    <a href="https://www.w3schools.com/java/java_inheritance.asp" target="_blank">קישור לקריאה נוספת על ירושה ב-Java</a>
+
+    <hr>
+
+    <h2 id="polymorphism">פולימורפיזם (Polymorphism)</h2>
+    <h3>פולימורפיזם (מיוונית: "ריבוי צורות") הוא היכולת של אובייקט להופיע ביותר מצורה אחת. בתכנות מונחה עצמים, זה אומר שניתן להתייחס לאובייקט של מחלקת בן כאילו הוא אובייקט של מחלקת האב שלו.</h3>
+    <p>היתרון המרכזי הוא גמישות והרחבה של הקוד. ניתן לכתוב קוד שפועל על אובייקטים ממחלקת האב, והוא יעבוד נכון גם עם אובייקטים ממחלקות הבן השונות, כאשר כל אחד יבצע את הפעולה הרלוונטית לו (בדרך כלל באמצעות דריסת מתודות - method overriding).</p>
+    <p>שני סוגים עיקריים של פולימורפיזם:</p>
+    <ul>
+        <li><strong>פולימורפיזם בזמן ריצה (Runtime Polymorphism / Dynamic Method Dispatch):</strong> מושג בעיקר באמצעות דריסת מתודות (Method Overriding). הקומפיילר לא יודע איזו מתודה בדיוק תרוץ; ההחלטה מתקבלת בזמן ריצה, בהתאם לסוג האמיתי של האובייקט.</li>
+        <li><strong>פולימורפיזם בזמן קומפילציה (Compile-time Polymorphism):</strong> מושג בעיקר באמצעות העמסת מתודות (Method Overloading) והעמסת אופרטורים (בשפות שתומכות בכך, לא ישירות ב-Java עבור אופרטורים). הקומפיילר מחליט איזו מתודה להריץ לפי חתימת המתודה (שם ורשימת פרמטרים).</li>
+    </ul>
+    <p>בדוגמה למטה, נתמקד בפולימורפיזם בזמן ריצה.</p>
+
+    <pre><code class="language-java">// נשתמש במחלקות Animal, Dog, Cat מהדוגמה של ירושה
+
+public class PolymorphismDemo {
+    // מתודה שמקבלת אובייקט מסוג Animal ויכולה לעבוד עם כל "צאצא" שלו
+    public static void printAnimalSound(Animal animal) {
+        System.out.print(animal.getName() + " says: ");
+        animal.makeSound(); // כאן מתרחש הפולימורפיזם!
+                           // המתודה makeSound שתקרא היא זו של האובייקט *האמיתי*
+    }
+
+    public static void main(String[] args) {
+        Animal myAnimal; // משתנה מסוג מחלקת האב
+
+        myAnimal = new Dog("Rex", "German Shepherd"); // אובייקט Dog מוקצה למשתנה Animal
+        System.out.println("My animal is a " + myAnimal.getClass().getSimpleName()); // יראה Dog
+        myAnimal.makeSound(); // יקרא ל-makeSound של Dog -> "Woof woof!"
+        // myAnimal.fetch(); // שגיאת קומפילציה! למרות שהאובייקט הוא Dog,
+                           // המשתנה myAnimal הוא מסוג Animal, ול-Animal אין מתודה fetch.
+                           // כדי לקרוא ל-fetch, נצטרך לעשות downcasting (בזהירות).
+
+        if (myAnimal instanceof Dog) { // בדיקה בטוחה לפני downcasting
+            Dog specificDog = (Dog) myAnimal; // Downcasting
+            specificDog.fetch();
+        }
+        System.out.println("-----");
+
+        myAnimal = new Cat("Misty"); // אובייקט Cat מוקצה לאותו משתנה Animal
+        System.out.println("My animal is now a " + myAnimal.getClass().getSimpleName()); // יראה Cat
+        myAnimal.makeSound(); // יקרא ל-makeSound של Cat -> "Meow!"
+        System.out.println("-----");
+
+        myAnimal = new Animal("Generic Creature"); // אובייקט Animal "רגיל"
+        System.out.println("My animal is now a " + myAnimal.getClass().getSimpleName()); // יראה Animal
+        myAnimal.makeSound(); // יקרא ל-makeSound של Animal -> "Some generic animal sound"
+        System.out.println("-----");
+
+        // שימוש במערך של Animal כדי להדגים פולימורפיזם על אוסף
+        Animal[] animals = new Animal[3];
+        animals[0] = new Dog("Charlie", "Labrador");
+        animals[1] = new Cat("Snowball");
+        animals[2] = new Animal("Unknown");
+
+        System.out.println("Iterating through animals array:");
+        for (Animal a : animals) {
+            printAnimalSound(a); // המתודה printAnimalSound מדגימה פולימורפיזם
         }
     }
 }</code></pre>
+    <p>בדוגמה <code>printAnimalSound(Animal animal)</code>, המתודה מקבלת <code>Animal</code>. כאשר אנו מעבירים לה אובייקט <code>Dog</code> או <code>Cat</code>, המתודה <code>makeSound()</code> שתיקרא היא זו של <code>Dog</code> או <code>Cat</code> בהתאמה, ולא של <code>Animal</code>. זוהי התנהגות פולימורפית.</p>
+    <p><strong>Downcasting:</strong> כפי שניתן לראות, אם יש לנו משתנה מסוג מחלקת אב שמצביע על אובייקט ממחלקת בן, ואנחנו רוצים לקרוא למתודה שקיימת רק במחלקת הבן, נצטרך לבצע "הורדה" (downcasting) של המשתנה לסוג של מחלקת הבן. חשוב לבדוק עם <code>instanceof</code> לפני כן כדי למנוע <code>ClassCastException</code> בזמן ריצה.</p>
+    <a href="https://www.w3schools.com/java/java_polymorphism.asp" target="_blank">קישור לקריאה נוספת על פולימורפיזם ב-Java</a>
 
 </body>
 </html>
